@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import MovieCard from "./MovieCard";
+import { BrowserRouter, Link } from "react-router-dom";
 
 function Movie({ addToSavedList }) {
   const [movie, setMovie] = useState(null);
@@ -29,7 +30,14 @@ function Movie({ addToSavedList }) {
   return (
     <div className="save-wrapper">
       <MovieCard movie={movie} />
-
+      <button>
+        <Link
+          style={{ textDecoration: "none" }}
+          to={`/update-movie/${movie.id}`}
+        >
+          <div>Update</div>
+        </Link>
+      </button>
       <div className="save-button" onClick={saveMovie}>
         Save
       </div>
