@@ -113,6 +113,7 @@ export const UpdateForm = ({ movieList, getMovieList }) => {
           value={formInput.stars}
         ></input>
       </label>
+      <button>Save</button>
     </form>
   );
 };
